@@ -1,0 +1,52 @@
+<DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                    var d = new Date();
+                    var hours = d.getHours();
+                    var minutes = d.getMinutes();
+                    var seconds = d.getSeconds();
+                    var rotate = function (object, degrees) {
+                            object.css({"-webkit-transform":"rotate("+degrees+"deg)", "-moz-transform":"rotate("+degrees+"deg)", "-ms-transform":"rotate("+degrees+"deg)","-o-transform":"rotate("+degrees+"deg)","transform":"rotate("+degrees+"deg)"});
+                        };
+
+                    var hoursDegrees = (30 * hours) + (0.5 * minutes);
+                    var minutesDegrees = (6 * minutes) + (0.1 * seconds);
+                    var secondsDegrees = 6 * seconds;
+
+                    rotate($("#hour"), hoursDegrees);
+                    rotate($("#minute"), minutesDegrees);
+                    rotate($("#second"), secondsDegrees);
+            });
+        </script>
+    </head>
+    
+    <body>
+        <div id="number-plate">
+            <div id="number" class="No1">1</div>
+            <div id="number" class="No2">2</div>
+            <div id="number" class="No3">3</div>
+            <div id="number" class="No4">4</div>
+            <div id="number" class="No5">5</div>
+            <div id="number" class="No6">6</div>
+            <div id="number" class="No7">7</div>
+            <div id="number" class="No8">8</div>
+            <div id="number" class="No9">9</div>
+            <div id="number" class="No10">10</div>
+            <div id="number" class="No11">11</div>
+            <div id="number" class="No12">12</div>
+        </div>
+        <div id="orbit" class="second-animation">
+            <div class="hand" id="second"><div id="second-hand"></div></div>
+        </div>
+        <div id="orbit" class="minute-animation">
+            <div class="hand" id="minute"><div id="minute-hand"></div></div>
+        </div>
+        <div id="orbit" class="hour-animation">
+            <div class="hand" id="hour"><div id="hour-hand"></div></div>
+        </div>
+    </body>
+</html>
